@@ -4,6 +4,7 @@ import joblib
 import numpy as np
 import pandas as pd
 from PIL import Image
+import matplotlib.pyplot as plt
 
 
 def streamlit_menu():
@@ -11,7 +12,7 @@ def streamlit_menu():
         with st.sidebar:
             selected = option_menu(
                 menu_title="Main Menu",  
-                options=["Home", "Prediction", "SHAP","LIME and ELI5"],  
+                options=["Home", "Prediction", "SHAP","LIME and ELI5","Model Analysis"],  
                 icons=["house","activity", "x-square-fill","x-square-fill"],  
                 menu_icon="cast", 
                 default_index=0,  
@@ -568,3 +569,19 @@ if selected == "LIME and ELI5":
     The other features, such as fnlwgt, workclass, age, and occupation, also have an impact on the model's prediction, but to a lesser extent.
 
     The plot also shows that the impact of each feature changes as the value of the feature changes. For example, the impact of relationship on the model's prediction is greater for people with less education.""")
+
+if selected == "Model Analysis":
+    st.title("Accuracies of Different Models")
+    comparison = Image.open("plots/comparison.png")
+
+    st.image(comparison, use_column_width=True)
+    st.markdown("""
+    The decision tree model is a type of machine learning model that uses a tree-like structure to make predictions. The tree is built by recursively splitting the training data into smaller and smaller subsets based on their features. At each split, the model chooses the feature that best separates the data into two groups. This process is repeated until each subset is pure, meaning that all of the data points in the subset belong to the same class. 
+    
+    To make a prediction, the model starts at the root of the tree and follows the branches down to the leaf node that matches the features of the new data point. The class of the leaf node is the model's prediction for the new data point.
+    
+    The random forest model is an ensemble learning model that combines the predictions of multiple decision trees to produce a more accurate prediction. To train a random forest model, the algorithm first creates a number of decision trees using different subsets of the training data. Each decision tree is trained independently of the others. To make a prediction, the model takes the average of the predictions of all of the decision trees.
+
+    Random forest models are often more accurate than individual decision trees because they are able to reduce overfitting. Overfitting occurs when a model is trained on a particular dataset so well that it is unable to generalize to new data. By combining the predictions of multiple decision trees, random forest models are able to reduce overfitting and produce more accurate predictions.
+
+    In the given plot, the decision tree model has an accuracy of 87%, while the random forest model has an accuracy of 85%. This means that the decision tree model is more accurate than the random forest model for the given dataset. However, it is important to note that the performance of machine learning models can vary depending on the dataset and the hyperparameters used to train the models.""")
