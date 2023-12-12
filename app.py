@@ -585,3 +585,45 @@ if selected == "Model Analysis":
     Random forest models are often more accurate than individual decision trees because they are able to reduce overfitting. Overfitting occurs when a model is trained on a particular dataset so well that it is unable to generalize to new data. By combining the predictions of multiple decision trees, random forest models are able to reduce overfitting and produce more accurate predictions.
 
     In the given plot, the decision tree model has an accuracy of 87%, while the random forest model has an accuracy of 85%. This means that the decision tree model is more accurate than the random forest model for the given dataset. However, it is important to note that the performance of machine learning models can vary depending on the dataset and the hyperparameters used to train the models.""")
+
+    st.title("Lazy Predict for Different Models")
+    lazy = Image.open("plots/lazypredict.png")
+
+    st.image(lazy, use_column_width=True)
+
+    st.markdown("""
+    The plot you sent shows the accuracy of various classification models. The accuracy of the models is measured by the number of data points that the model correctly predicts the class of. The higher the accuracy, the better the model is at predicting the correct class of new data points.
+
+    The plot shows that the Extra Trees Classifier is the most accurate model, with an accuracy of 97.2%. The next most accurate models are the LGBMClassifier and the RandomForestClassifier, with accuracies of 96.8% and 96.6%, respectively.
+
+    The other models have lower accuracies, but they may still be useful for certain applications. For example, the LabelPropagation model may be useful for applications where the data is unlabeled or where the labels are noisy.
+
+    Extra Trees Classifier: This model is similar to a random forest classifier, but it builds decision trees using a different method. Extra trees classifiers are often more accurate than random forests, but they can take longer to train.
+    
+    LGBMClassifier: This model is a gradient boosting machine classifier. Gradient boosting machines are a type of ensemble learning model that combines the predictions of multiple weak learners to produce a more accurate prediction. LGBMClassifiers are often very fast and accurate, but they can be difficult to tune.
+    
+    RandomForestClassifier: This model is an ensemble learning model that combines the predictions of multiple decision trees. Random forest classifiers are often very accurate and easy to tune, but they can be slow to train for large datasets.
+    
+    XGBClassifier: This model is another type of gradient boosting machine classifier. XGBClassifiers are similar to LGBMClassifiers, but they often have slightly better accuracy. However, they can also be more difficult to tune.
+    
+    LabelPropagation: This model is a semi-supervised learning model that can be used to classify data that is unlabeled or where the labels are noisy. Labelpropagation models work by propagating the labels of known data points to nearby data points.
+    
+    BaggingClassifier: This model is an ensemble learning model that works by creating multiple bootstrapped datasets and training a classifier on each dataset. The predictions of the classifiers are then averaged to produce a final prediction. Bagging classifiers can be used to improve the accuracy of any type of classifier.
+    
+    LabelSpreading: This model is similar to the LabelPropagation model, but it uses a different method to propagate the labels of known data points to nearby data points. Labelspreading models are often more accurate than labelpropagation models for sparse datasets.
+    
+    AdaBoostClassifier: This model is an ensemble learning model that works by iteratively training a classifier on a weighted version of the training data. The weights of the data points are adjusted after each iteration to give more weight to data points that the classifier is misclassifying. AdaBoost classifiers can be used to improve the accuracy of any type of classifier.
+    
+    KNeighborsClassifier: This model is a simple classification model that predicts the class of a new data point by finding the K most similar data points in the training data and taking the average of their classes. KNeighbors classifiers are often very fast and easy to tune, but they can be inaccurate for datasets with many features.
+    
+    DecisionTreeClassifier: This model is a simple classification model that predicts the class of a new data point by following a tree of decisions. Decision trees are often very fast and easy to interpret, but they can be inaccurate for complex datasets.
+    
+    SVC: This model is a support vector machine classifier. Support vector machines are a type of machine learning model that can be used for both classification and regression tasks. SVCs are often very accurate, but they can be slow to train for large datasets.
+    
+    NuSVC: This model is similar to the SVC model, but it uses a different parameter to control the trade-off between overfitting and underfitting.
+    
+    QuadraticDiscriminantAnalysis: This model is a statistical classification model that uses a quadratic function to separate the data into different classes. Quadratic discriminant analysis models are often very accurate, but they can be inaccurate for datasets with many features.
+    
+    GaussianNB: This model is a simple classification model that assumes that the features of each class are normally distributed. GaussianNB models are often very fast and easy to train, but they can be inaccurate for datasets where the features are not normally distributed.
+    
+    RidgeClassifier: This model is a linear classification model that uses a ridge regularization technique to prevent overfitting. Ridge classifiers are often very accurate and easy to tune, but they can be inaccurate for datasets with many features""")
